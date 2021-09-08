@@ -1,9 +1,9 @@
-import { LinkProps } from "react-router-dom";
+import { NavLinkProps } from "react-router-dom";
 
 interface IHeader {
   color?: string;
 }
 
-interface IHeaderNav extends LinkProps {
+interface IHeaderNav extends NavLinkProps {
   selected?: boolean;
 }

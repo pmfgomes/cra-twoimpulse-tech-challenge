@@ -1,14 +1,42 @@
 import styled from "@emotion/styled";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { IHeader, IHeaderNav } from "types/components/header";
 
-export const HeaderContainer = styled.div<IHeader>`
+export const HeaderContainer = styled.header<IHeader>`
   width: 100%;
-  padding: 32px;
+  padding: 32px 0;
   background-color: ${props => props.color};
 `;
 
-export const HeaderLink = styled(Link)<IHeaderNav>`
+export const HeaderContentContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-flow: row nowrap;
+`;
+
+export const LogoContainer = styled.div`
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const NavbarContainer = styled.nav`
+  display: flex;
+  flex: 2;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 80px;
+`;
+
+export const HeaderLink = styled(NavLink)<IHeaderNav>`
   color: #fff;
-  font-weight: ${props => props.selected && "600"};
+  cursor: pointer;
+  margin: 0 32px;
+  text-decoration: none;
+
+  &.active {
+    font-weight: 600;
+  }
 `;

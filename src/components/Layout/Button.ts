@@ -32,15 +32,15 @@ export const Button = styled.button<IButton>`
     }
   }};
 
-  &:active {
+  &:hover {
     background-color: ${props => {
       switch (props.color) {
         case "primary":
-          return darken(0.05, props.theme.palette.primary);
+          return darken(0.1, props.theme.palette.primary);
         case "secondary":
-          return darken(0.05, props.theme.palette.secondary);
+          return darken(0.1, props.theme.palette.secondary);
         default:
-          return darken(0.05, props.color || props.theme.palette.primary);
+          return darken(0.1, props.color || props.theme.palette.primary);
       }
     }};
   }

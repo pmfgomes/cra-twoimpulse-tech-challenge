@@ -27,15 +27,24 @@ export const GlobalStyles = css`
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
     }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    a,
+    svg tspan {
+      font-family: "Poppins", sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
   }
 
   body #root {
     width: 100%;
     height: 100%;
     overflow-x: hidden;
-  }
-
-  :is(h1, h2, h3, h4, h5, h6) {
-    font-family: "Poppins", sans-serif;
   }
 `;

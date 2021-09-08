@@ -19,7 +19,7 @@ export const FirstSectionContainer = styled.section`
 
   background-color: ${props => props.theme.palette.primary};
   background-image: url("/assets/images/img-cut-landing.svg");
-  background-position: center;
+  background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
 `;
