@@ -39,6 +39,8 @@ export const HomepageLink = styled(Link)`
   padding: 8px 16px;
   transition: opacity 100ms cubic-bezier(0.645, 0.045, 0.355, 1);
   box-shadow: #000 0px 1px 3px;
+  font-size: 14px;
+  font-family: "Open Sans", sans-serif;
 
   &:active {
     opacity: 0.8;
