@@ -32,6 +32,7 @@ export const GlobalStyles = css`
   body #root {
     width: 100%;
     height: 100%;
+    overflow-x: hidden;
   }
 
   :is(h1, h2, h3, h4, h5, h6) {
