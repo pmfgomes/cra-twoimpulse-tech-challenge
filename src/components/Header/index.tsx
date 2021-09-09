@@ -4,15 +4,17 @@ import {
   HeaderContentContainer,
   LogoContainer,
   NavbarContainer,
+  BlankElement,
 } from "./styles";
 import { ReactComponent as HeaderLogo } from "assets/images/logo.svg";
 
 interface HeaderProps {
   color?: string;
+  showAddEmployee?: boolean;
 }
 
 export default function Header(props: HeaderProps): React.ReactElement {
-  const { color = "transparent" } = props;
+  const { color = "transparent", showAddEmployee = false } = props;
 
   const LogoContainerContent = () => {
     return <HeaderLogo key="logo" fill="#000" />;
@@ -30,9 +32,13 @@ export default function Header(props: HeaderProps): React.ReactElement {
         <HeaderLink to="/employees" exact>
           Employees
         </HeaderLink>
-        <HeaderLink to="/new-employee" exact>
-          New Employee
-        </HeaderLink>
+        {showAddEmployee ? (
+          <HeaderLink to="/new-employee" exact>
+            New Employee
+          </HeaderLink>
+        ) : (
+          <BlankElement />
+        )}
       </>
     );
   };

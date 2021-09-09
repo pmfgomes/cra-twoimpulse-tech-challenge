@@ -40,3 +40,7 @@ export const HeaderLink = styled(NavLink)<IHeaderNav>`
     font-weight: 600;
   }
 `;
+
+export const BlankElement = styled.div`
+  width: 300px;
+`;
