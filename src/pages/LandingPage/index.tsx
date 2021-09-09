@@ -1,17 +1,22 @@
 import Header from "components/Header";
-import { Button } from "components/Layout";
+import { Button, Message } from "components/Layout";
 import {
   Container,
   Title,
   FirstSectionContainer,
   TitleContainer,
   ButtonTitleStyles,
+  SecondSectionContainer,
+  Divider,
+  SecondSectionMessageContainer,
+  PageMessage,
+  SecondSectionLearnMoreContainer,
+  ImgLanding,
 } from "./styles";
 
 export default function LandingPage(): React.ReactElement {
-  const MESSAGE = "Make Your Team the best it can be";
-
-  const FirstSection = () => {
+  const FirstSectionWithHeader = () => {
+    const MESSAGE = "Make Your Team the best it can be";
     return (
       <FirstSectionContainer>
         <Header />
@@ -25,9 +30,31 @@ export default function LandingPage(): React.ReactElement {
     );
   };
 
+  const SecondSection = () => {
+    const FIRST_MESSAGE =
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore inventore veritadipisci velit, snumquam eius";
+    return (
+      <SecondSectionContainer>
+        <SecondSectionMessageContainer>
+          <Divider />
+          <PageMessage>{FIRST_MESSAGE}</PageMessage>
+        </SecondSectionMessageContainer>
+        <SecondSectionLearnMoreContainer>
+          <ImgLanding />
+        </SecondSectionLearnMoreContainer>
+      </SecondSectionContainer>
+    );
+  };
+
+  const Footer = () => {
+    return <div>Footer</div>;
+  };
+
   return (
     <Container>
-      <FirstSection />
+      <FirstSectionWithHeader />
+      <SecondSection />
+      <Footer />
     </Container>
   );
 }
