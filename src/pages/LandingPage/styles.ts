@@ -2,33 +2,29 @@ import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 
 export const Container = styled.main`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   height: 100%;
   width: 100%;
+  display: grid;
+  grid-template-rows: 100% 100% 100%;
+  grid-template-areas: "first-section" "second-section" "footer";
 `;
 
 export const FirstSectionContainer = styled.section`
+  grid-area: first-section;
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  height: 100%;
-  width: 100%;
-
-  background-color: ${props => props.theme.palette.primary};
-  background-image: url("/assets/images/img-cut-landing.svg");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background: center / cover no-repeat ${props => props.theme.palette.primary}
+    url("/assets/images/img-cut-landing.svg");
 `;
 
 export const TitleContainer = styled.div`
   display: grid;
   place-items: center;
   width: 27em;
-  margin-top: 2rem;
+  margin-top: 8rem;
+  margin-right: 2rem;
 `;
 
 export const Title = styled.h1`

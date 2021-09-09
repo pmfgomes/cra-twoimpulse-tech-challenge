@@ -24,7 +24,7 @@ export const LogoContainer = styled.div`
 
 export const NavbarContainer = styled.nav`
   display: flex;
-  flex: 2;
+  flex: 1;
   align-items: center;
   justify-content: flex-end;
   padding-right: 80px;
@@ -42,5 +42,5 @@ export const HeaderLink = styled(NavLink)<IHeaderNav>`
 `;
 
 export const BlankElement = styled.div`
-  width: 300px;
+  width: 140px;
 `;
