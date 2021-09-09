@@ -21,3 +21,7 @@ interface IButton {
 interface ITitle {
   size?: number;
 }
+
+interface IMessage {
+  align?: "left" | "center" | "right";
+}
