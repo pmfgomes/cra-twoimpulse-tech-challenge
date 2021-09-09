@@ -5,7 +5,7 @@ export const Container = styled.main`
   height: 100%;
   width: 100%;
   display: grid;
-  grid-template-rows: 100% 100% 100%;
+  grid-template-rows: repeat(3, 100%);
   grid-template-areas: "first-section" "second-section" "footer";
 `;
 
