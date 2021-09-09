@@ -42,5 +42,5 @@ export const HeaderLink = styled(NavLink)<IHeaderNav>`
 `;
 
 export const BlankElement = styled.div`
-  width: 140px;
+  width: 180px;
 `;
