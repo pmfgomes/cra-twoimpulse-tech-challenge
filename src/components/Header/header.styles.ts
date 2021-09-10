@@ -27,7 +27,7 @@ export const NavbarContainer = styled.nav`
   flex: 1;
   align-items: center;
   justify-content: flex-end;
-  padding-right: 80px;
+  padding-right: 14%;
 `;
 
 export const HeaderLink = styled(NavLink)<IHeaderNav>`
@@ -39,8 +39,4 @@ export const HeaderLink = styled(NavLink)<IHeaderNav>`
   &.active {
     font-weight: 600;
   }
-`;
-
-export const BlankElement = styled.div`
-  width: 180px;
 `;

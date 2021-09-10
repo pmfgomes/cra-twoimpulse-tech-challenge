@@ -4,7 +4,6 @@ import {
   HeaderContentContainer,
   LogoContainer,
   NavbarContainer,
-  BlankElement,
 } from "./header.styles";
 import { ReactComponent as HeaderLogo } from "assets/images/logo.svg";
 
@@ -32,12 +31,10 @@ export default function Header(props: HeaderProps): React.ReactElement {
         <HeaderLink to="/employees" exact>
           Employees
         </HeaderLink>
-        {showAddEmployee ? (
+        {showAddEmployee && (
           <HeaderLink to="/new-employee" exact>
             New Employee
           </HeaderLink>
-        ) : (
-          <BlankElement />
         )}
       </>
     );
