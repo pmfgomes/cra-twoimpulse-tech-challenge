@@ -4,14 +4,14 @@ import { Button } from "components/Layout";
 import {
   Container,
   Title,
-  FirstSectionContainer,
+  TopSectionContainer,
   TitleContainer,
   ButtonTitleStyles,
-  SecondSectionContainer,
+  MiddleSectionContainer,
   Divider,
-  SecondSectionMessageContainer,
+  MiddleSectionMessageContainer,
   LandingPageMessage,
-  SecondSectionLearnMoreContainer,
+  MiddleSectionLearnMoreContainer,
   ImageLanding,
   ImageLandingInfoContainer,
   FooterContainer,
@@ -19,10 +19,10 @@ import {
 import faker from "faker";
 
 export default function LandingPage(): React.ReactElement {
-  const FirstSectionWithHeader = () => {
+  const TopSectionWithHeader = () => {
     const MESSAGE = "Make Your Team the best it can be";
     return (
-      <FirstSectionContainer>
+      <TopSectionContainer>
         <Header />
         <TitleContainer>
           <Title>{MESSAGE}</Title>
@@ -30,18 +30,18 @@ export default function LandingPage(): React.ReactElement {
             Enter
           </Button>
         </TitleContainer>
-      </FirstSectionContainer>
+      </TopSectionContainer>
     );
   };
 
-  const SecondSection = () => {
+  const MiddleSection = () => {
     return (
-      <SecondSectionContainer>
-        <SecondSectionMessageContainer>
+      <MiddleSectionContainer>
+        <MiddleSectionMessageContainer>
           <Divider />
           <LandingPageMessage>{faker.lorem.sentence(20)}</LandingPageMessage>
-        </SecondSectionMessageContainer>
-        <SecondSectionLearnMoreContainer>
+        </MiddleSectionMessageContainer>
+        <MiddleSectionLearnMoreContainer>
           <ImageLanding />
           <ImageLandingInfoContainer>
             <LandingPageInfo
@@ -50,8 +50,8 @@ export default function LandingPage(): React.ReactElement {
               buttonText="LEARN MORE"
             />
           </ImageLandingInfoContainer>
-        </SecondSectionLearnMoreContainer>
-      </SecondSectionContainer>
+        </MiddleSectionLearnMoreContainer>
+      </MiddleSectionContainer>
     );
   };
 
@@ -65,8 +65,8 @@ export default function LandingPage(): React.ReactElement {
 
   return (
     <Container>
-      <FirstSectionWithHeader />
-      <SecondSection />
+      <TopSectionWithHeader />
+      <MiddleSection />
       <Footer />
     </Container>
   );

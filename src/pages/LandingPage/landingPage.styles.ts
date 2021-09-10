@@ -7,11 +7,11 @@ export const Container = styled.main`
   width: 100%;
   display: grid;
   grid-template-rows: 100% 130% 60%;
-  grid-template-areas: "first-section" "second-section" "footer";
+  grid-template-areas: "top-section" "middle-section" "footer";
 `;
 
-export const FirstSectionContainer = styled.section`
-  grid-area: first-section;
+export const TopSectionContainer = styled.section`
+  grid-area: top-section;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -41,13 +41,13 @@ export const ButtonTitleStyles = css`
   padding: 16px 70px;
 `;
 
-export const SecondSectionContainer = styled.section`
-  grid-area: second-section;
+export const MiddleSectionContainer = styled.section`
+  grid-area: middle-section;
   display: grid;
   grid-template-rows: 20% auto;
 `;
 
-export const SecondSectionMessageContainer = styled.section`
+export const MiddleSectionMessageContainer = styled.section`
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -66,7 +66,7 @@ export const LandingPageMessage = styled(Message)`
   width: 40%;
 `;
 
-export const SecondSectionLearnMoreContainer = styled.section`
+export const MiddleSectionLearnMoreContainer = styled.section`
   display: flex;
   position: relative;
 
@@ -107,6 +107,7 @@ export const ImageLandingInfoContainer = styled.div`
   .landing-page-info-container {
     position: relative;
     top: 20%;
+    left: 8px;
   }
 
   &::before {
