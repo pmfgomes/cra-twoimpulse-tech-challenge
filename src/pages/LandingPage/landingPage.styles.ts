@@ -83,7 +83,7 @@ export const ImgCurve = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
 
-  transform: translateX(-50px);
+  transform: translateX(-2%);
 
   z-index: -1;
 `;
