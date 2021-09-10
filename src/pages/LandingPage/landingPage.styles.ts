@@ -46,8 +46,37 @@ export const ButtonTitleStyles = css`
 
 export const MiddleSectionContainer = styled.section`
   grid-area: middle-section;
+  position: relative;
   display: grid;
   grid-template-rows: 20% auto;
+
+  &:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    max-width: 100%;
+    min-height: 100%;
+
+    background-image: url("/assets/images/img-landing.svg");
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: 5% 50%;
+    z-index: -1;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    max-width: 100%;
+    min-height: 100%;
+
+    background-image: url("/assets/images/curve.svg");
+    background-size: 90%;
+    background-repeat: no-repeat;
+    background-position: 70% -25%;
+    z-index: -1;
+  }
 `;
 
 export const MiddleSectionMessageContainer = styled.section`
@@ -74,33 +103,9 @@ export const MiddleSectionLearnMoreContainer = styled.section`
   position: relative;
 `;
 
-export const ImgCurve = styled.div`
-  position: absolute;
-  width: 100%;
-  height: 100%;
-
-  top: 0;
-  left: 0;
-
-  background-image: url("/assets/images/curve.svg");
-  background-repeat: no-repeat;
-  background-size: cover;
-
-  transform: translateX(-2%);
-
-  z-index: -1;
-`;
-
-export const ImageLanding = styled.div`
+export const BlankFlexSpace = styled.div`
   display: flex;
   flex: 1.5;
-
-  background-image: url("/assets/images/img-landing.svg");
-  background-repeat: no-repeat;
-  background-size: contain;
-
-  position: relative;
-  transform: translateX(0%) translateY(-15%);
 `;
 
 export const ImageLandingInfoContainer = styled.div`
@@ -115,6 +120,21 @@ export const ImageLandingInfoContainer = styled.div`
     left: 8px;
     width: 55%;
   }
+
+  &:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    max-width: 100%;
+    min-height: 100%;
+
+    background-image: url("/assets/images/circle.svg");
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: 330% 100%;
+
+    z-index: -1;
+  }
 `;
 
 export const ImageLandingInfoButton = styled(Button)`
@@ -123,18 +143,4 @@ export const ImageLandingInfoButton = styled(Button)`
   color: #fff;
   text-transform: uppercase;
   font-family: Poppins, sans-serif;
-`;
-
-export const ImgCircle = styled.div`
-  position: absolute;
-  width: 100%;
-  height: 100%;
-
-  background-image: url("/assets/images/circle.svg");
-  background-repeat: no-repeat;
-  background-size: contain;
-
-  transform: scale(0.8) translateY(45%) translateX(70%);
-
-  z-index: -1;
 `;

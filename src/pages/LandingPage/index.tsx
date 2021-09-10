@@ -12,10 +12,8 @@ import {
   MiddleSectionMessageContainer,
   LandingPageMessage,
   MiddleSectionLearnMoreContainer,
-  ImageLanding,
+  BlankFlexSpace,
   ImageLandingInfoContainer,
-  ImgCircle,
-  ImgCurve,
   ImageLandingInfoButton,
 } from "./landingPage.styles";
 import faker from "faker";
@@ -45,15 +43,13 @@ export default function LandingPage(): React.ReactElement {
           <LandingPageMessage>{faker.lorem.sentence(20)}</LandingPageMessage>
         </MiddleSectionMessageContainer>
         <MiddleSectionLearnMoreContainer>
-          <ImgCurve />
-          <ImageLanding />
+          <BlankFlexSpace />
           <ImageLandingInfoContainer>
             <InfoFrame
               title="Augmented reality"
               description={faker.lorem.paragraph(4)}
               bottomElement={<ImageLandingInfoButton>LEARN MORE</ImageLandingInfoButton>}
             />
-            <ImgCircle />
           </ImageLandingInfoContainer>
         </MiddleSectionLearnMoreContainer>
       </MiddleSectionContainer>
