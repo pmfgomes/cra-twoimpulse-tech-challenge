@@ -16,8 +16,11 @@ export const TopSectionContainer = styled.section`
   flex-direction: column;
   align-items: center;
 
-  background: center / cover no-repeat ${props => props.theme.palette.primary}
-    url("/assets/images/img-cut-landing.svg");
+  background-color: ${props => props.theme.palette.primary};
+  background-image: url("/assets/images/img-cut-landing.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 `;
 
 export const TitleContainer = styled.div`
