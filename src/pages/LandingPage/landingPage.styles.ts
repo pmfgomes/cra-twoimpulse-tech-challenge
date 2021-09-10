@@ -69,20 +69,23 @@ export const LandingPageMessage = styled(Message)`
 export const MiddleSectionLearnMoreContainer = styled.section`
   display: flex;
   position: relative;
+`;
 
-  &::before {
-    content: "";
-    position: absolute;
-    width: 200%;
-    height: 130%;
+export const ImgCurve = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
 
-    background-image: url("/assets/images/curve.svg");
-    background-repeat: no-repeat;
+  top: 0;
+  left: 0;
 
-    top: 45px;
-    left: -70px;
-    transform: scale(0.9);
-  }
+  background-image: url("/assets/images/curve.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  transform: translateX(-50px);
+
+  z-index: -1;
 `;
 
 export const ImageLanding = styled.div`
@@ -94,8 +97,7 @@ export const ImageLanding = styled.div`
   background-size: contain;
 
   position: relative;
-  left: 40px;
-  bottom: 140px;
+  transform: translateX(0%) translateY(-15%);
 `;
 
 export const ImageLandingInfoContainer = styled.div`
@@ -109,21 +111,20 @@ export const ImageLandingInfoContainer = styled.div`
     top: 20%;
     left: 8px;
   }
+`;
 
-  &::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
+export const ImgCircle = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
 
-    top: 90px;
-    left: 100px;
+  background-image: url("/assets/images/circle.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
 
-    background-image: url("/assets/images/circle.svg");
-    background-position: bottom 0px right -350px;
-    background-repeat: no-repeat;
-    transform: scale(0.8);
-  }
+  transform: scale(0.8) translateY(45%) translateX(70%);
+
+  z-index: -1;
 `;
 
 export const FooterContainer = styled.section`

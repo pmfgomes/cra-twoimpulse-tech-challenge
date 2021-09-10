@@ -15,6 +15,8 @@ import {
   ImageLanding,
   ImageLandingInfoContainer,
   FooterContainer,
+  ImgCircle,
+  ImgCurve,
 } from "./landingPage.styles";
 import faker from "faker";
 
@@ -42,6 +44,7 @@ export default function LandingPage(): React.ReactElement {
           <LandingPageMessage>{faker.lorem.sentence(20)}</LandingPageMessage>
         </MiddleSectionMessageContainer>
         <MiddleSectionLearnMoreContainer>
+          <ImgCurve />
           <ImageLanding />
           <ImageLandingInfoContainer>
             <LandingPageInfo
@@ -49,6 +52,7 @@ export default function LandingPage(): React.ReactElement {
               description={faker.lorem.paragraph(4)}
               buttonText="LEARN MORE"
             />
+            <ImgCircle />
           </ImageLandingInfoContainer>
         </MiddleSectionLearnMoreContainer>
       </MiddleSectionContainer>
