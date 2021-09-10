@@ -1,5 +1,6 @@
 import Header from "components/Header";
-import { Button, Message } from "components/Layout";
+import LandingPageInfo from "components/LandingPageInfo";
+import { Button } from "components/Layout";
 import {
   Container,
   Title,
@@ -9,10 +10,13 @@ import {
   SecondSectionContainer,
   Divider,
   SecondSectionMessageContainer,
-  PageMessage,
+  LandingPageMessage,
   SecondSectionLearnMoreContainer,
-  ImgLanding,
-} from "./styles";
+  ImageLanding,
+  ImageLandingInfoContainer,
+  FooterContainer,
+} from "./landingPage.styles";
+import faker from "faker";
 
 export default function LandingPage(): React.ReactElement {
   const FirstSectionWithHeader = () => {
@@ -31,23 +35,32 @@ export default function LandingPage(): React.ReactElement {
   };
 
   const SecondSection = () => {
-    const FIRST_MESSAGE =
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore inventore veritadipisci velit, snumquam eius";
     return (
       <SecondSectionContainer>
         <SecondSectionMessageContainer>
           <Divider />
-          <PageMessage>{FIRST_MESSAGE}</PageMessage>
+          <LandingPageMessage>{faker.lorem.sentence(20)}</LandingPageMessage>
         </SecondSectionMessageContainer>
         <SecondSectionLearnMoreContainer>
-          <ImgLanding />
+          <ImageLanding />
+          <ImageLandingInfoContainer>
+            <LandingPageInfo
+              title="Augmented reality"
+              description={faker.lorem.paragraph(4)}
+              buttonText="LEARN MORE"
+            />
+          </ImageLandingInfoContainer>
         </SecondSectionLearnMoreContainer>
       </SecondSectionContainer>
     );
   };
 
   const Footer = () => {
-    return <div>Footer</div>;
+    return (
+      <FooterContainer>
+        <div>Footer</div>
+      </FooterContainer>
+    );
   };
 
   return (

@@ -5,7 +5,7 @@ import {
   LogoContainer,
   NavbarContainer,
   BlankElement,
-} from "./styles";
+} from "./header.styles";
 import { ReactComponent as HeaderLogo } from "assets/images/logo.svg";
 
 interface HeaderProps {

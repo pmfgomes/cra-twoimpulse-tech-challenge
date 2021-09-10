@@ -6,7 +6,7 @@ export const Container = styled.main`
   height: 100%;
   width: 100%;
   display: grid;
-  grid-template-rows: repeat(3, 100%);
+  grid-template-rows: 100% 130% 100%;
   grid-template-areas: "first-section" "second-section" "footer";
 `;
 
@@ -44,12 +44,11 @@ export const ButtonTitleStyles = css`
 export const SecondSectionContainer = styled.section`
   grid-area: second-section;
   display: grid;
-  grid-template-rows: 30% auto;
+  grid-template-rows: 20% auto;
 `;
 
 export const SecondSectionMessageContainer = styled.section`
   width: 100%;
-  padding-top: 64px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -62,20 +61,56 @@ export const Divider = styled.div`
   border-top: 2px solid #0036c6;
 `;
 
-export const PageMessage = styled(Message)`
+export const LandingPageMessage = styled(Message)`
   text-align: center;
   width: 40%;
 `;
 
 export const SecondSectionLearnMoreContainer = styled.section`
-  display: grid;
-  grid-template-rows: 100%;
-  grid-template-columns: 60% 40%;
+  display: flex;
 `;
 
-export const ImgLanding = styled.div`
-  height: 100%;
-  width: 100%;
+export const ImageLanding = styled.div`
+  display: flex;
+  flex: 1.5;
 
-  background: center / contain no-repeat url("/assets/images/img-landing.svg");
+  background-image: url("/assets/images/img-landing.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  position: relative;
+  left: 40px;
+  bottom: 140px;
+`;
+
+export const ImageLandingInfoContainer = styled.div`
+  position: relative;
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+
+  .landing-page-info-container {
+    position: relative;
+    top: 20%;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    top: 90px;
+    left: 100px;
+
+    background-image: url("/assets/images/circle.svg");
+    background-position: bottom 0px right -350px;
+    background-repeat: no-repeat;
+    transform: scale(0.8);
+  }
+`;
+
+export const FooterContainer = styled.section`
+  grid-area: footer;
+  background-color: ${props => props.theme.palette.primary};
 `;
