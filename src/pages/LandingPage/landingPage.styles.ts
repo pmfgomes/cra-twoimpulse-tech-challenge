@@ -6,7 +6,7 @@ export const Container = styled.main`
   height: 100%;
   width: 100%;
   display: grid;
-  grid-template-rows: 100% 130% 100%;
+  grid-template-rows: 100% 130% 60%;
   grid-template-areas: "first-section" "second-section" "footer";
 `;
 
@@ -68,6 +68,21 @@ export const LandingPageMessage = styled(Message)`
 
 export const SecondSectionLearnMoreContainer = styled.section`
   display: flex;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 130%;
+
+    background-image: url("/assets/images/curve.svg");
+    background-repeat: no-repeat;
+    transform: scale(0.8);
+
+    top: -20px;
+    left: -200px;
+  }
 `;
 
 export const ImageLanding = styled.div`
