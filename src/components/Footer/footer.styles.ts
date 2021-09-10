@@ -57,10 +57,9 @@ export const FooterContentContainer = styled.div`
 
 export const SocialMediaIconLinksContainer = styled.div`
   display: flex;
-  justify-content: space-between;
-  width: 300px;
-
+  gap: 48px;
   color: #fff;
+
   svg {
     font-size: 28px;
   }
