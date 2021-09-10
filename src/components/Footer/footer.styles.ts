@@ -44,7 +44,7 @@ export const FooterContentContainer = styled.div`
   width: 100%;
 
   .info-frame-container {
-    width: 28%;
+    width: 335px;
     row-gap: 8px;
     text-align: left;
 

@@ -19,7 +19,6 @@ export const InfoFrameTitle = styled.p`
 
 export const InfoFrameMessage = styled(Message)`
   text-align: left;
-  width: 80%;
 `;
 
 export const InfoFrameDividerContainer = styled.div`

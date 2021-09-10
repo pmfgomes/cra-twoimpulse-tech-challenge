@@ -110,6 +110,7 @@ export const ImageLandingInfoContainer = styled.div`
     position: relative;
     top: 20%;
     left: 8px;
+    width: 55%;
   }
 `;
 
