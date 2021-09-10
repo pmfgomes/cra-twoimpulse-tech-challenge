@@ -1,12 +1,12 @@
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
-import { Message } from "components/Layout";
+import { Button, Message } from "components/Layout";
 
 export const Container = styled.main`
   height: 100%;
   width: 100%;
   display: grid;
-  grid-template-rows: 100% 130% 60%;
+  grid-template-rows: 100% 130% 80%;
   grid-template-areas: "top-section" "middle-section" "footer";
 `;
 
@@ -106,11 +106,19 @@ export const ImageLandingInfoContainer = styled.div`
   flex: 1;
   overflow: hidden;
 
-  .landing-page-info-container {
+  .info-frame-container {
     position: relative;
     top: 20%;
     left: 8px;
   }
+`;
+
+export const ImageLandingInfoButton = styled(Button)`
+  padding: 12px 40px;
+  background: linear-gradient(to top, #5851ea, #7061fa);
+  color: #fff;
+  text-transform: uppercase;
+  font-family: Poppins, sans-serif;
 `;
 
 export const ImgCircle = styled.div`
@@ -125,9 +133,4 @@ export const ImgCircle = styled.div`
   transform: scale(0.8) translateY(45%) translateX(70%);
 
   z-index: -1;
-`;
-
-export const FooterContainer = styled.section`
-  grid-area: footer;
-  background-color: ${props => props.theme.palette.primary};
 `;

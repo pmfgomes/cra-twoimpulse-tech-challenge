@@ -1,9 +1,10 @@
-interface LandingPageInfoProps {
-  title?: string;
-  description?: string;
-  buttonText?: string;
+interface InfoFrameProps {
+  title?: React.ReactNode;
+  description?: React.ReactNode;
+  bottomElement?: React.ReactNode;
+  showDivider?: boolean;
 }
 
-interface LandingPageInfoDividerProps {
+interface InfoFrameDividerProps {
   width?: number | string;
 }

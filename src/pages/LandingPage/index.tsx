@@ -1,5 +1,5 @@
 import Header from "components/Header";
-import LandingPageInfo from "components/LandingPageInfo";
+import InfoFrame from "components/InfoFrame";
 import { Button } from "components/Layout";
 import {
   Container,
@@ -14,11 +14,12 @@ import {
   MiddleSectionLearnMoreContainer,
   ImageLanding,
   ImageLandingInfoContainer,
-  FooterContainer,
   ImgCircle,
   ImgCurve,
+  ImageLandingInfoButton,
 } from "./landingPage.styles";
 import faker from "faker";
+import Footer from "components/Footer";
 
 export default function LandingPage(): React.ReactElement {
   const TopSectionWithHeader = () => {
@@ -47,23 +48,15 @@ export default function LandingPage(): React.ReactElement {
           <ImgCurve />
           <ImageLanding />
           <ImageLandingInfoContainer>
-            <LandingPageInfo
+            <InfoFrame
               title="Augmented reality"
               description={faker.lorem.paragraph(4)}
-              buttonText="LEARN MORE"
+              bottomElement={<ImageLandingInfoButton>LEARN MORE</ImageLandingInfoButton>}
             />
             <ImgCircle />
           </ImageLandingInfoContainer>
         </MiddleSectionLearnMoreContainer>
       </MiddleSectionContainer>
-    );
-  };
-
-  const Footer = () => {
-    return (
-      <FooterContainer>
-        <div>Footer</div>
-      </FooterContainer>
     );
   };
 
