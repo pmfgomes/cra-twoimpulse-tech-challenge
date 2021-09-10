@@ -3,6 +3,11 @@ import styled from "@emotion/styled";
 export const FooterContainer = styled.section<FooterProps>`
   grid-area: footer;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
   background-image: linear-gradient(to top, #5d4ce4, #7660f5);
   z-index: -1;
 
@@ -10,7 +15,8 @@ export const FooterContainer = styled.section<FooterProps>`
     content: "";
     position: absolute;
     width: 100%;
-    height: 100%;
+    max-width: 100%;
+    min-height: 100%;
     background-image: url("/assets/images/curve-1.svg");
     background-size: contain;
     background-repeat: no-repeat;
@@ -26,11 +32,11 @@ export const FooterContainer = styled.section<FooterProps>`
     content: "";
     position: absolute;
     width: 100%;
-    height: 100%;
+    max-width: 100%;
+    min-height: 100%;
     background-image: url("/assets/images/circle-footer.svg");
     background-repeat: no-repeat;
-    background-position: 110% 10%;
-
+    background-size: contain;
     z-index: -1;
   }
   `}
@@ -38,12 +44,12 @@ export const FooterContainer = styled.section<FooterProps>`
 
 export const FooterContentContainer = styled.div`
   display: flex;
-  padding: 128px;
   box-sizing: border-box;
-  height: 100%;
-  width: 100%;
+  gap: 128px;
 
   .info-frame-container {
+    padding-top: 8px;
+    margin-right: 64px;
     width: 335px;
     row-gap: 8px;
     text-align: left;
@@ -63,4 +69,23 @@ export const SocialMediaIconLinksContainer = styled.div`
   svg {
     font-size: 28px;
   }
+`;
+
+export const RightsReservedDivider = styled.hr`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 65%;
+  border: 0;
+  height: 2px;
+  background-color: #9da3e2;
+  margin: 64px 0;
+`;
+
+export const RightsReservedMessage = styled.p`
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  color: #fff;
+  margin: 0;
 `;

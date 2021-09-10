@@ -64,7 +64,7 @@ export default function LandingPage(): React.ReactElement {
     <Container>
       <TopSectionWithHeader />
       <MiddleSection />
-      <Footer />
+      <Footer showCircles />
     </Container>
   );
 }

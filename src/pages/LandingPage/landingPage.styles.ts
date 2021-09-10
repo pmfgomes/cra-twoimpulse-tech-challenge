@@ -6,7 +6,7 @@ export const Container = styled.main`
   height: 100%;
   width: 100%;
   display: grid;
-  grid-template-rows: 100% 130% 80%;
+  grid-template-rows: 100% 130% 70%;
   grid-template-areas: "top-section" "middle-section" "footer";
 `;
 
