@@ -80,8 +80,8 @@ export const SecondSectionLearnMoreContainer = styled.section`
     background-repeat: no-repeat;
     transform: scale(0.8);
 
-    top: -20px;
-    left: -200px;
+    top: -10px;
+    left: -180px;
   }
 `;
 
