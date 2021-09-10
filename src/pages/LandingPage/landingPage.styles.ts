@@ -78,10 +78,10 @@ export const MiddleSectionLearnMoreContainer = styled.section`
 
     background-image: url("/assets/images/curve.svg");
     background-repeat: no-repeat;
-    transform: scale(0.8);
 
-    top: -10px;
-    left: -180px;
+    top: 45px;
+    left: -70px;
+    transform: scale(0.9);
   }
 `;
 
