@@ -5,7 +5,7 @@ export const WrapperContainer = styled.main`
   height: 100%;
   width: 100%;
   display: grid;
-  grid-template-rows: 10% auto 70%;
+  grid-template-rows: 11% auto 70%;
   grid-template-areas: "header" "content" "footer";
 `;
 
