@@ -18,13 +18,20 @@ import {
 } from "./landingPage.styles";
 import faker from "faker";
 import Footer from "components/Footer";
+import { css } from "@emotion/react";
 
 export default function LandingPage(): React.ReactElement {
   const TopSectionWithHeader = () => {
     const MESSAGE = "Make Your Team the best it can be";
     return (
       <TopSectionContainer>
-        <Header />
+        <Header
+          navProps={{
+            css: css`
+              padding-right: 13%;
+            `,
+          }}
+        />
         <TitleContainer>
           <Title>{MESSAGE}</Title>
           <Button color="secondary" css={ButtonTitleStyles}>

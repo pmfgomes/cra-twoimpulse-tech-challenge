@@ -6,14 +6,10 @@ import {
   NavbarContainer,
 } from "./header.styles";
 import { ReactComponent as HeaderLogo } from "assets/images/logo.svg";
-
-interface HeaderProps {
-  color?: string;
-  showAddEmployee?: boolean;
-}
+import { HeaderProps } from "types/components/header";
 
 export default function Header(props: HeaderProps): React.ReactElement {
-  const { color = "transparent", showAddEmployee = false } = props;
+  const { color, moreLinkItems = undefined, className, navProps, ...other } = props;
 
   const LogoContainerContent = () => {
     return <HeaderLogo key="logo" fill="#000" />;
@@ -31,22 +27,18 @@ export default function Header(props: HeaderProps): React.ReactElement {
         <HeaderLink to="/employees" exact>
           Employees
         </HeaderLink>
-        {showAddEmployee && (
-          <HeaderLink to="/new-employee" exact>
-            New Employee
-          </HeaderLink>
-        )}
+        {moreLinkItems?.map(linkItems => linkItems)}
       </>
     );
   };
 
   return (
-    <HeaderContainer color={color}>
+    <HeaderContainer color={color} {...other} className={className}>
       <HeaderContentContainer>
         <LogoContainer>
           <LogoContainerContent />
         </LogoContainer>
-        <NavbarContainer>
+        <NavbarContainer {...navProps}>
           <Navbar />
         </NavbarContainer>
       </HeaderContentContainer>

@@ -1,10 +1,11 @@
 import styled from "@emotion/styled";
 import { NavLink } from "react-router-dom";
-import { IHeader, IHeaderNav } from "types/components/header";
+import { HeaderProps, IHeaderNav } from "types/components/header";
 
-export const HeaderContainer = styled.header<IHeader>`
+export const HeaderContainer = styled.header<HeaderProps>`
   width: 100%;
-  padding: 32px 0;
+  padding: 32px;
+  box-sizing: border-box;
   background-color: ${props => props.color};
 `;
 
@@ -27,7 +28,6 @@ export const NavbarContainer = styled.nav`
   flex: 1;
   align-items: center;
   justify-content: flex-end;
-  padding-right: 14%;
 `;
 
 export const HeaderLink = styled(NavLink)<IHeaderNav>`
