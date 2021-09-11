@@ -85,7 +85,7 @@ export const RightsReservedDivider = styled.hr`
 
 export const RightsReservedMessage = styled.p`
   font-family: "Poppins", sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   color: #fff;
   margin: 0;
 `;
