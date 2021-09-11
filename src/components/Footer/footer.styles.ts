@@ -8,7 +8,7 @@ export const FooterContainer = styled.section<FooterProps>`
   align-items: center;
   justify-content: center;
 
-  background-image: linear-gradient(to top, #5d4ce4, #7660f5);
+  background-image: linear-gradient(to top, #5851ea, #7061fa);
   z-index: -1;
 
   &::before {
