@@ -1,4 +1,4 @@
-import { address, name, internet, datatype } from "faker";
+import { address, name, internet, random } from "faker";
 import { getRandomInt, randomIsoDate } from "utils/helpers";
 
 const STATUS = ["Online", "Away", "Offline"];
@@ -11,7 +11,7 @@ const CREATED_START_DATE = "2020-01-01";
 
 for (let i = 0; i < 7; i++) {
   EMPLOYEE_DATA.push({
-    id: `${datatype.number(100)}`,
+    id: `${random.alphaNumeric(6)}`.toUpperCase(),
     profilePhoto: internet.avatar(),
     address: `${address.cityName()}, ${address.country()}`,
     birthdate: randomIsoDate(new Date(BIRTHDATE_START_DATE), new Date(BIRTHDATE_END_DATE)),
