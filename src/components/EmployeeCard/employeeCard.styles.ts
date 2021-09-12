@@ -10,6 +10,7 @@ export const Card = styled.div<EmployeeCardProps>`
   box-sizing: border-box;
   width: 650px;
   box-shadow: ${rgba("#000", 0.1)} 0px 0px 6px 0px;
+  background-color: #fff;
 
   visibility: ${({ visible }) => !visible && "hidden"};
 `;
