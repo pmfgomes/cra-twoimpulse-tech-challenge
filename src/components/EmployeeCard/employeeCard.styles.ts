@@ -1,15 +1,17 @@
 import styled from "@emotion/styled";
-import { rgba } from "polished";
+import { darken, rgba } from "polished";
 import Avatar from "react-avatar";
+import { EmployeeCardProps } from "types/components/employeeCard";
 
-export const Card = styled.div`
+export const Card = styled.div<EmployeeCardProps>`
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   box-sizing: border-box;
-  width: 580px;
-  height: 360px;
+  width: 650px;
   box-shadow: ${rgba("#000", 0.1)} 0px 0px 6px 0px;
+
+  visibility: ${({ visible }) => !visible && "hidden"};
 `;
 
 export const CardHeader = styled.header`
@@ -45,10 +47,10 @@ export const CardHeaderEmployeeName = styled.strong`
 `;
 
 export const CardHeaderEmployeeId = styled.p`
-  /* font-family: "Poppins", sans-serif; */
   margin: 0;
   color: #9e9caa;
   font-size: 16px;
+  font-weight: 500;
 `;
 
 export const CardHeaderActions = styled.div`
@@ -58,5 +60,47 @@ export const CardHeaderActions = styled.div`
   svg {
     font-size: 26px;
     color: #a4afb7;
+    cursor: pointer;
+    transition: all 100ms cubic-bezier(0.645, 0.045, 0.355, 1);
+
+    &:hover {
+      color: ${darken(0.2, "#a4afb7")};
+    }
+
+    &:active {
+      opacity: 0.5;
+    }
   }
+`;
+
+export const CardContentContainer = styled.section`
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  gap: 8px;
+
+  label {
+    color: #9e9caa;
+    font-weight: 500;
+    margin-right: 8px;
+  }
+
+  input {
+    width: 100%;
+  }
+`;
+
+export const CardInputContainer = styled.div`
+  display: flex;
+  align-items: center;
+
+  color: #4b4c59;
+`;
+
+export const CardInputValue = styled.p`
+  margin: 0;
+`;
+
+export const CardFormHiddenButton = styled.button`
+  display: none;
 `;

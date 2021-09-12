@@ -9,7 +9,7 @@ const BIRTHDATE_START_DATE = "1980-01-01";
 const BIRTHDATE_END_DATE = "2000-12-31";
 const CREATED_START_DATE = "2020-01-01";
 
-for (let i = 0; i < 3; i++) {
+for (let i = 0; i < 7; i++) {
   EMPLOYEE_DATA.push({
     id: `${datatype.number(100)}`,
     profilePhoto: internet.avatar(),

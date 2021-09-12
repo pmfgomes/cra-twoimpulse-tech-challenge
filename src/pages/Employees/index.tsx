@@ -32,11 +32,15 @@ export default function Employees(): React.ReactElement {
     setTimeout(() => {
       setEmployeesList(EMPLOYEE_DATA);
       setLoadingData(false);
-    }, 1000);
+    }, 500);
   };
 
   useEffect(() => {
-    getEmployeeData();
+    if (!employeesList) {
+      getEmployeeData();
+    } else {
+      setLoadingData(false);
+    }
   }, []);
 
   const content = () => {
