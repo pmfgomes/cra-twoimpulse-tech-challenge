@@ -76,8 +76,11 @@ export const CardHeaderActions = styled.div`
 export const CardContentContainer = styled.section`
   display: flex;
   flex-direction: column;
-  padding: 24px;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 16px 24px;
   gap: 8px;
+  height: 180px;
 
   label {
     color: #9e9caa;
@@ -88,17 +91,6 @@ export const CardContentContainer = styled.section`
   input {
     width: 100%;
   }
-`;
-
-export const CardInputContainer = styled.div`
-  display: flex;
-  align-items: center;
-
-  color: #4b4c59;
-`;
-
-export const CardInputValue = styled.p`
-  margin: 0;
 `;
 
 export const CardFormHiddenButton = styled.button`

@@ -7,17 +7,15 @@ import {
   CardHeaderEmployeeName,
   CardHeaderAvatar,
   CardContentContainer,
-  CardInputContainer,
-  CardInputValue,
   CardFormHiddenButton,
 } from "./employeeCard.styles";
 import { MdEdit, MdClose, MdCheck, MdArrowBack } from "react-icons/md";
-import { Formik, Field, Form } from "formik";
+import { Formik, Form } from "formik";
 import { useRef, useState } from "react";
-import dayjs from "dayjs";
 import { EmployeeCardProps } from "types/components/employeeCard";
 import useStore from "store";
 import produce from "immer";
+import FormInput from "components/FormCardInput";
 
 export default function EmployeeCard(props: EmployeeCardProps): React.ReactElement {
   const { data, visible = true } = props;
@@ -29,35 +27,6 @@ export default function EmployeeCard(props: EmployeeCardProps): React.ReactEleme
 
   const resetButtonRef = useRef<HTMLButtonElement>(null);
   const submitButtonRef = useRef<HTMLButtonElement>(null);
-
-  const FormInput = ({
-    name,
-    label,
-    type = "text",
-  }: {
-    name: string;
-    label: string;
-    type?: "text" | "date" | "number";
-  }) => {
-    return (
-      <CardInputContainer>
-        <label htmlFor={name}>{label}</label>
-        <Field name={name}>
-          {({ field }) => {
-            let newValue = field.value;
-            if (type === "date" && field.value) {
-              newValue = dayjs(field.value).format("DD/MM/YYYY HH:mm:ss");
-            }
-            if (!edit) {
-              return <CardInputValue>{newValue}</CardInputValue>;
-            }
-
-            return <input name={name} id={name} value={newValue} onChange={field.onChange} />;
-          }}
-        </Field>
-      </CardInputContainer>
-    );
-  };
 
   const enableEdit = () => {
     setEdit(true);
@@ -120,11 +89,11 @@ export default function EmployeeCard(props: EmployeeCardProps): React.ReactEleme
               </CardHeaderActions>
             </CardHeader>
             <CardContentContainer>
-              <FormInput name="birthdate" label="Birthdate:" type="date" />
-              <FormInput name="status" label="Status:" />
-              <FormInput name="position" label="Position:" />
-              <FormInput name="createdDate" label="Created:" type="date" />
-              <FormInput name="updatedDate" label="Updated:" type="date" />
+              <FormInput edit={edit} name="birthdate" label="Birthdate:" type="date" />
+              <FormInput edit={edit} name="status" label="Status:" />
+              <FormInput edit={edit} name="position" label="Position:" />
+              <FormInput edit={edit} name="createdDate" label="Created:" type="date" />
+              <FormInput edit={edit} name="updatedDate" label="Updated:" type="date" />
             </CardContentContainer>
           </Form>
         </Formik>
