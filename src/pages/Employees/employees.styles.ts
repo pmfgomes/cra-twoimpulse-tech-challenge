@@ -19,6 +19,7 @@ export const EmployeesContainer = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 
   box-sizing: border-box;
 
@@ -26,6 +27,21 @@ export const EmployeesContainer = styled.section`
 
   width: 100%;
   height: 100%;
+
+  &:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    max-width: 100%;
+    min-height: 100%;
+
+    background-image: url("/assets/images/curve.svg");
+    background-size: cover;
+    background-position: 0% 90%;
+    transform: translateX(10%);
+    background-repeat: no-repeat;
+    z-index: -1;
+  }
 `;
 
 export const EmployeeTitleContainer = styled.div`
@@ -80,14 +96,14 @@ export const RightSquare = styled(SquareSvg)`
 
 export const EmployeeFooter = styled.div`
   box-sizing: border-box;
-  padding: 10% 0;
+  padding: 5% 0 10%;
   width: 100%;
   height: 100%;
 `;
 
 export const FooterPinkSquare = styled(SquareSvg)`
   width: 100%;
-  transform: translateX(-35%);
+  transform: translateX(-35%) rotate(45deg);
 
   z-index: -1;
 
