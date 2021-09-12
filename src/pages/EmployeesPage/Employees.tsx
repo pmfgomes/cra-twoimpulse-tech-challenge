@@ -23,7 +23,7 @@ export default function Employees(): React.ReactElement {
   const [loadingData, setLoadingData] = useState(true);
 
   const moreLinkItems = [
-    <HeaderButtonLink key="new-employee-button-link" to="/employees">
+    <HeaderButtonLink color="secondary" key="new-employee-button-link" to="/employees">
       New Employee
     </HeaderButtonLink>,
   ];

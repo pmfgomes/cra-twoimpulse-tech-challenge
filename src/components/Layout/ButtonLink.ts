@@ -53,6 +53,6 @@ export const ButtonLink = styled(Link)<IButton>`
   }
 
   &:active {
-    opacity: 0.5;
+    opacity: 0.8;
   }
 `;

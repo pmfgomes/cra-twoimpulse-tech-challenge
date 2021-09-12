@@ -1,18 +1,11 @@
 import styled from "@emotion/styled";
-import { HeaderLink } from "components/Header/header.styles";
-import { darken } from "polished";
+
 import { ReactComponent as SquareSvg } from "assets/images/el-1.svg";
+import { ButtonLink } from "components/Layout";
 
-export const HeaderButtonLink = styled(HeaderLink)`
-  border-radius: 32px;
+export const HeaderButtonLink = styled(ButtonLink)`
   padding: 16px 32px;
-  background-color: #fff;
-  color: ${({ theme }) => theme.palette.primary};
-  transition: background-color 100ms cubic-bezier(0.645, 0.045, 0.355, 1);
-
-  &:active {
-    background-color: ${darken(0.1, "#fff")};
-  }
+  font-size: 14px;
 `;
 
 export const EmployeesContainer = styled.section`
