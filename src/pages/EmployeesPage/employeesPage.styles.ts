@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 
 import { ReactComponent as SquareSvg } from "assets/images/el-1.svg";
+import { ReactComponent as CurveSvg } from "assets/images/curve.svg";
 import { ButtonLink } from "components/Layout";
 
 export const HeaderButtonLink = styled(ButtonLink)`
@@ -25,16 +26,22 @@ export const EmployeesContainer = styled.section`
     content: "";
     position: absolute;
     width: 100%;
-    max-width: 100%;
-    min-height: 100%;
+    height: 100%;
 
     background-image: url("/assets/images/curve.svg");
     background-size: cover;
-    background-position: 0% 90%;
-    transform: translateX(10%);
+    background-position: 0% 50%;
     background-repeat: no-repeat;
     z-index: -1;
   }
+`;
+
+export const Curve = styled(CurveSvg)`
+  position: absolute;
+
+  transform: scale(1.5) scaleX(-1);
+
+  z-index: -1;
 `;
 
 export const EmployeeTitleContainer = styled.div`
@@ -57,6 +64,7 @@ export const EmployeeTitleContainer = styled.div`
     background-image: url("/assets/images/el-1.svg");
     background-size: 77px;
     background-repeat: no-repeat;
+    background-position-x: 6%;
 
     z-index: -1;
   }
@@ -114,4 +122,13 @@ export const EmployeeCardsContainer = styled.div`
 
   width: 90%;
   height: 100%;
+`;
+
+export const NewEmployeeFormContainer = styled.div`
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  box-sizing: border-box;
 `;

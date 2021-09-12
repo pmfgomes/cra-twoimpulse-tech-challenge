@@ -2,9 +2,8 @@ import styled from "@emotion/styled";
 import { darken } from "polished";
 
 export const Button = styled.button<IButton>`
-  display: inline-flex;
   cursor: pointer;
-  padding: 16px 32px;
+  padding: 12px 40px;
   width: fit-content;
   min-width: 64px;
   background: 0;
@@ -12,6 +11,8 @@ export const Button = styled.button<IButton>`
     0px 1px 5px 0px rgb(0 0 0 / 12%);
   border: 0;
   border-radius: 32px;
+  font-family: Poppins, sans-serif;
+
   background-color: ${props => {
     switch (props.color) {
       case "primary":
@@ -46,5 +47,9 @@ export const Button = styled.button<IButton>`
     }};
   }
 
-  transition: background-color 100ms cubic-bezier(0.645, 0.045, 0.355, 1);
+  &:active {
+    opacity: 0.8;
+  }
+
+  transition: all 100ms cubic-bezier(0.645, 0.045, 0.355, 1);
 `;

@@ -13,11 +13,11 @@ import {
   MiddleSectionLearnMoreContainer,
   BlankFlexSpace,
   ImageLandingInfoContainer,
-  ImageLandingInfoButton,
 } from "./landingPage.styles";
 import faker from "faker";
 import Footer from "components/Footer";
 import { css } from "@emotion/react";
+import { ButtonGradient } from "styles/common";
 
 export default function LandingPage(): React.ReactElement {
   const TopSectionWithHeader = () => {
@@ -54,7 +54,7 @@ export default function LandingPage(): React.ReactElement {
             <InfoFrame
               title="Augmented reality"
               description={faker.lorem.paragraph(4)}
-              bottomElement={<ImageLandingInfoButton>LEARN MORE</ImageLandingInfoButton>}
+              bottomElement={<ButtonGradient color="primary">LEARN MORE</ButtonGradient>}
             />
           </ImageLandingInfoContainer>
         </MiddleSectionLearnMoreContainer>

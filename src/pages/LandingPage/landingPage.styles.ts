@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { Button, Message } from "components/Layout";
+import { Message } from "components/Layout";
 
 export const Container = styled.main`
   height: 100%;
@@ -126,12 +126,4 @@ export const ImageLandingInfoContainer = styled.div`
 
     z-index: -1;
   }
-`;
-
-export const ImageLandingInfoButton = styled(Button)`
-  padding: 12px 40px;
-  background: linear-gradient(to top, #5851ea, #7061fa);
-  color: #fff;
-  text-transform: uppercase;
-  font-family: Poppins, sans-serif;
 `;

@@ -3,8 +3,7 @@ import { FormInputContainer, FormValue } from "./formCardInput.styles";
 import dayjs from "dayjs";
 import { DatePicker } from "react-dayjs-picker";
 import { useState } from "react";
-
-const DATE_FORMAT = "DD/MM/YYYY";
+import { DATE_FORMAT } from "utils/common";
 
 export default function FormCardInput(props: FormCardInputProps): React.ReactElement {
   const { label, name, type = "text", edit = false, containerProps } = props;
