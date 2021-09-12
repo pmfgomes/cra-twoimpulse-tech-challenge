@@ -103,6 +103,6 @@ export const EmployeeCardsContainer = styled.div`
   justify-content: center;
   gap: 32px;
 
-  width: 100%;
+  width: 90%;
   height: 100%;
 `;
