@@ -1,32 +1,15 @@
-import { css } from "@emotion/react";
-import Wrapper from "components/Wrapper";
 import { useEffect, useState } from "react";
 import useStore from "store";
-import {
-  EmployeeTitleContainer,
-  EmployeesContainer,
-  HeaderButtonLink,
-  EmployeeTitle,
-  RightSquare,
-  EmployeeTitleRightSquareContainer,
-  EmployeeFooter,
-  FooterPinkSquare,
-  EmployeeCardsContainer,
-} from "./employees.styles";
+import { EmployeeFooter, FooterPinkSquare, EmployeeCardsContainer } from "./employeesPage.styles";
 import EMPLOYEE_DATA from "mocks/employeeData";
 import EmployeeCard from "components/EmployeeCard";
+import EmployeePageTitle from "./EmployeePageTitle";
 
 export default function Employees(): React.ReactElement {
   const employeesList = useStore(store => store.employeesList);
   const setEmployeesList = useStore(store => store.setEmployeesList);
 
   const [loadingData, setLoadingData] = useState(true);
-
-  const moreLinkItems = [
-    <HeaderButtonLink color="secondary" key="new-employee-button-link" to="/employees">
-      New Employee
-    </HeaderButtonLink>,
-  ];
 
   const getEmployeeData = () => {
     setTimeout(() => {
@@ -62,28 +45,12 @@ export default function Employees(): React.ReactElement {
   };
 
   return (
-    <Wrapper
-      headerProps={{
-        moreLinkItems,
-        navProps: {
-          css: css`
-            padding-right: 64px;
-          `,
-        },
-      }}
-    >
-      <EmployeesContainer>
-        <EmployeeTitleContainer>
-          <EmployeeTitle>Team</EmployeeTitle>
-          <EmployeeTitleRightSquareContainer>
-            <RightSquare />
-          </EmployeeTitleRightSquareContainer>
-        </EmployeeTitleContainer>
-        {content()}
-        <EmployeeFooter>
-          <FooterPinkSquare />
-        </EmployeeFooter>
-      </EmployeesContainer>
-    </Wrapper>
+    <>
+      <EmployeePageTitle title="Team" />
+      {content()}
+      <EmployeeFooter>
+        <FooterPinkSquare />
+      </EmployeeFooter>
+    </>
   );
 }
