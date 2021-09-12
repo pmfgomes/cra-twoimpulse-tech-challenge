@@ -1,12 +1,11 @@
 import Header from "components/Header";
 import InfoFrame from "components/InfoFrame";
-import { Button } from "components/Layout";
+import { ButtonLink } from "components/Layout";
 import {
   Container,
   Title,
   TopSectionContainer,
   TitleContainer,
-  ButtonTitleStyles,
   MiddleSectionContainer,
   Divider,
   MiddleSectionMessageContainer,
@@ -34,9 +33,9 @@ export default function LandingPage(): React.ReactElement {
         />
         <TitleContainer>
           <Title>{MESSAGE}</Title>
-          <Button color="secondary" css={ButtonTitleStyles}>
+          <ButtonLink to="/employees" color="secondary">
             Enter
-          </Button>
+          </ButtonLink>
         </TitleContainer>
       </TopSectionContainer>
     );

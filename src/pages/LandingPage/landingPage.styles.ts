@@ -1,4 +1,3 @@
-import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import { Button, Message } from "components/Layout";
 
@@ -34,14 +33,6 @@ export const TitleContainer = styled.div`
 export const Title = styled.h1`
   font-size: 3em;
   color: #fff;
-`;
-
-export const ButtonTitleStyles = css`
-  border-radius: 32px;
-  box-shadow: none;
-  color: #3d4ef4;
-  font-weight: 700;
-  padding: 16px 70px;
 `;
 
 export const MiddleSectionContainer = styled.section`
