@@ -10,7 +10,7 @@ import {
   CardFormHiddenButton,
 } from "./employeeCard.styles";
 import { MdEdit, MdClose, MdCheck, MdArrowBack } from "react-icons/md";
-import { Formik, Form } from "formik";
+import { Formik, Form, FormikHelpers } from "formik";
 import { useRef, useState } from "react";
 import { EmployeeCardProps } from "types/components/employeeCard";
 import useStore from "store";
@@ -22,7 +22,6 @@ export default function EmployeeCard(props: EmployeeCardProps): React.ReactEleme
 
   const setEmployeesList = useStore(store => store.setEmployeesList);
 
-  const [formData, setFormData] = useState(data);
   const [edit, setEdit] = useState(false);
 
   const resetButtonRef = useRef<HTMLButtonElement>(null);
@@ -36,8 +35,9 @@ export default function EmployeeCard(props: EmployeeCardProps): React.ReactEleme
     setEdit(false);
   };
 
-  const handleFormSubmit = (values: Employee) => {
-    setFormData(values);
+  const handleFormSubmit = (values: Employee, formikHelpers: FormikHelpers<Employee>) => {
+    const { setValues } = formikHelpers;
+    setValues(values);
     setEmployeesList((oldValues: Employees) =>
       produce(oldValues, draft => {
         const indexInArray = oldValues.findIndex(employee => employee.id === values.id);
@@ -62,14 +62,19 @@ export default function EmployeeCard(props: EmployeeCardProps): React.ReactEleme
 
   return (
     <Card visible={visible}>
-      {formData && (
-        <Formik initialValues={formData} onSubmit={handleFormSubmit} onReset={handleFormReset}>
+      {data && (
+        <Formik
+          initialValues={data}
+          onSubmit={handleFormSubmit}
+          onReset={handleFormReset}
+          enableReinitialize
+        >
           <Form>
             <CardHeader>
-              <CardHeaderAvatar src={formData?.profilePhoto} size="78" round />
+              <CardHeaderAvatar src={data?.profilePhoto} size="78" round />
               <CardHeaderEmployeeInfo>
-                <CardHeaderEmployeeName>{formData?.name}</CardHeaderEmployeeName>
-                <CardHeaderEmployeeId>Employee ID: {formData?.id}</CardHeaderEmployeeId>
+                <CardHeaderEmployeeName>{data?.name}</CardHeaderEmployeeName>
+                <CardHeaderEmployeeId>Employee ID: {data?.id}</CardHeaderEmployeeId>
               </CardHeaderEmployeeInfo>
               <CardHeaderActions>
                 {edit && (
@@ -85,7 +90,7 @@ export default function EmployeeCard(props: EmployeeCardProps): React.ReactEleme
                   </>
                 )}
                 {!edit && <MdEdit onClick={enableEdit} />}
-                <MdClose onClick={() => handleDeleteEmployee(formData.id)} />
+                <MdClose onClick={() => handleDeleteEmployee(data.id)} />
               </CardHeaderActions>
             </CardHeader>
             <CardContentContainer>
