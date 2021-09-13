@@ -1,6 +1,6 @@
 import useStore from "store";
 import { EmployeeFooter, FooterPinkSquare, EmployeeCardsContainer } from "./employeesPage.styles";
-import EmployeeCard from "components/EmployeeCard";
+import EmployeeCard from "pages/EmployeesPage/EmployeeCard";
 import EmployeePageTitle from "./EmployeePageTitle";
 
 export default function Employees(): React.ReactElement {
