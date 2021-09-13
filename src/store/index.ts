@@ -3,6 +3,7 @@ import { devtools } from "zustand/middleware";
 import produce, { Draft } from "immer";
 import pipe from "ramda/es/pipe";
 import { WritableDraft } from "immer/dist/types/types-external";
+import EMPLOYEE_DATA from "mocks/employeeData";
 
 const immer =
   <T extends State>(
@@ -26,7 +27,7 @@ const setStateHelper = (
 };
 
 const useStore = createStore<Store>((set, get) => ({
-  employeesList: undefined,
+  employeesList: EMPLOYEE_DATA,
   setEmployeesList: employeesList => {
     setStateHelper("employeesList", employeesList, set, get);
   },
