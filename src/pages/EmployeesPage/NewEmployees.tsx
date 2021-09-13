@@ -2,11 +2,11 @@ import { css } from "@emotion/react";
 import FormPageInput from "components/FormPageInput";
 import { Form, Formik, FormikErrors, FormikHelpers } from "formik";
 import produce from "immer";
-import { useRef } from "react";
 import useStore from "store";
 import { ButtonGradient } from "styles/common";
 import EmployeePageTitle from "./EmployeePageTitle";
 import { NewEmployeeFormContainer } from "./employeesPage.styles";
+import { internet as fakerInternet } from "faker";
 
 export default function NewEmployees(): React.ReactElement {
   const setEmployeesList = useStore(store => store.setEmployeesList);
@@ -23,16 +23,7 @@ export default function NewEmployees(): React.ReactElement {
   };
 
   const validate = (values: Employee) => {
-    const errors: Employee = {
-      id: "",
-      name: "",
-      birthdate: "",
-      address: "",
-      status: "",
-      position: "",
-      createdDate: "",
-      updatedDate: "",
-    };
+    const errors: Partial<Employee> = {};
 
     if (!values.id) {
       errors.id = "Required";
@@ -60,32 +51,30 @@ export default function NewEmployees(): React.ReactElement {
   };
 
   const handleFormSubmit = (values: Employee, formikHelpers: FormikHelpers<Employee>) => {
-    console.log("file: NewEmployees.tsx ~ line 65 ~ handleFormSubmit ~ values", values);
-    const { resetForm, validateForm } = formikHelpers;
-    validateForm(values);
+    const { resetForm } = formikHelpers;
 
     setEmployeesList((oldValues: Employees) =>
       produce(oldValues, draft => {
-        draft.push(values);
+        draft.push({ ...values, profilePhoto: fakerInternet.avatar() });
       }),
     );
     resetForm();
   };
 
-  const content = (errors: FormikErrors<Employee>) => {
+  const content = (errors?: FormikErrors<Employee>) => {
     return (
       <NewEmployeeFormContainer>
-        <FormPageInput label="Employee ID:" name="id" hasError={!!errors.id} />
-        <FormPageInput label="Name:" name="name" hasError={!!errors.name} />
+        <FormPageInput label="Employee ID:" name="id" hasError={!!errors?.id} />
+        <FormPageInput label="Name:" name="name" hasError={!!errors?.name} />
         <FormPageInput
           label="Brithdate:"
           name="birthdate"
           type="date"
-          hasError={!!errors.birthdate}
+          hasError={!!errors?.birthdate}
         />
-        <FormPageInput label="Address" name="address" hasError={!!errors.address} />
-        <FormPageInput label="Status:" name="status" hasError={!!errors.status} />
-        <FormPageInput label="Position:" name="position" hasError={!!errors.position} />
+        <FormPageInput label="Address" name="address" hasError={!!errors?.address} />
+        <FormPageInput label="Status:" name="status" hasError={!!errors?.status} />
+        <FormPageInput label="Position:" name="position" hasError={!!errors?.position} />
         <FormPageInput
           label="Created:"
           name="createdDate"
@@ -97,7 +86,7 @@ export default function NewEmployees(): React.ReactElement {
               width: 50%;
             `,
           }}
-          hasError={!!errors.createdDate}
+          hasError={!!errors?.createdDate}
         />
         <FormPageInput
           label="Updated:"
@@ -118,35 +107,34 @@ export default function NewEmployees(): React.ReactElement {
   return (
     <>
       <EmployeePageTitle title="New Employee" />
-      <Formik initialValues={initialValues} onSubmit={handleFormSubmit} validate={validate}>
-        {({ errors, submitForm }) => {
-          return (
-            <Form
+      <Formik
+        initialValues={initialValues}
+        onSubmit={handleFormSubmit}
+        validate={validate}
+        validateOnBlur={false}
+        validateOnChange={false}
+      >
+        {({ errors }) => (
+          <Form
+            css={css`
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+            `}
+          >
+            {content(errors)}
+            <ButtonGradient
+              type="submit"
+              color="primary"
               css={css`
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
+                margin: 5% 0;
               `}
             >
-              {content(errors)}
-              <ButtonGradient
-                type="submit"
-                color="primary"
-                css={css`
-                  margin: 5% 0;
-                `}
-                onClick={async () => {
-                  console.log("click works");
-                  const r = await submitForm();
-                  console.log("file: NewEmployees.tsx ~ line 142 ~ NewEmployees ~ r", r);
-                }}
-              >
-                Submit
-              </ButtonGradient>
-            </Form>
-          );
-        }}
+              Submit
+            </ButtonGradient>
+          </Form>
+        )}
       </Formik>
     </>
   );
