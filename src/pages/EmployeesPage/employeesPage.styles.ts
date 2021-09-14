@@ -1,7 +1,6 @@
 import styled from "@emotion/styled";
 
 import { ReactComponent as SquareSvg } from "assets/images/el-1.svg";
-import { ReactComponent as CurveSvg } from "assets/images/curve.svg";
 import { ButtonLink } from "components/Layout";
 
 export const HeaderButtonLink = styled(ButtonLink)`
@@ -19,6 +18,20 @@ export const EmployeesContainer = styled.section`
 
   width: 100%;
   height: 100%;
+
+  &:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    max-width: 100%;
+    min-height: 100%;
+
+    background-image: url("/assets/images/curve.svg");
+    background-size: cover;
+    background-position: 260px -1200px;
+    background-repeat: no-repeat;
+    z-index: -1;
+  }
 `;
 
 export const EmployeeTitleContainer = styled.div`
@@ -106,12 +119,4 @@ export const NewEmployeeFormContainer = styled.div`
   justify-content: center;
   align-items: center;
   gap: 16px;
-`;
-
-export const EmployeeCurveSvg = styled(CurveSvg)`
-  position: absolute;
-
-  transform: translateY(-35%) translateX(13%);
-
-  z-index: -1;
 `;
