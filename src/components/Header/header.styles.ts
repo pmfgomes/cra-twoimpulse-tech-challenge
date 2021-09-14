@@ -5,7 +5,6 @@ import { HeaderProps, IHeaderNav } from "types/components/header";
 export const HeaderContainer = styled.header<HeaderProps>`
   width: 100%;
   padding: 32px;
-  box-sizing: border-box;
   background-color: ${props => props.color};
 `;
 

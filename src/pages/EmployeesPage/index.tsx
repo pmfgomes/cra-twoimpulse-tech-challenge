@@ -2,7 +2,7 @@ import { css } from "@emotion/react";
 import Wrapper from "components/Wrapper";
 import { Route, Switch } from "react-router";
 import Employees from "./Employees";
-import { EmployeesContainer, HeaderButtonLink } from "./employeesPage.styles";
+import { EmployeeCurveSvg, EmployeesContainer, HeaderButtonLink } from "./employeesPage.styles";
 import NewEmployees from "./NewEmployees";
 
 export default function Routes(): React.ReactElement {
@@ -24,6 +24,8 @@ export default function Routes(): React.ReactElement {
       }}
     >
       <EmployeesContainer>
+        <EmployeeCurveSvg />
+
         <Switch>
           <Route exact path="/employees/new-employee" component={NewEmployees} />
           <Route exact path="/employees" component={Employees} />

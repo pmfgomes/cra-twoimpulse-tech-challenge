@@ -44,7 +44,6 @@ export const FooterContainer = styled.section<FooterProps>`
 
 export const FooterContentContainer = styled.div`
   display: flex;
-  box-sizing: border-box;
   gap: 128px;
 
   .info-frame-container {

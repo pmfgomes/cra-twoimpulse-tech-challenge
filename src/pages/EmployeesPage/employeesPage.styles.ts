@@ -15,33 +15,10 @@ export const EmployeesContainer = styled.section`
   align-items: center;
   position: relative;
 
-  box-sizing: border-box;
-
   padding: 0 10%;
 
   width: 100%;
   height: 100%;
-
-  &:before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-
-    background-image: url("/assets/images/curve.svg");
-    background-size: cover;
-    background-position: 0% 50%;
-    background-repeat: no-repeat;
-    z-index: -1;
-  }
-`;
-
-export const Curve = styled(CurveSvg)`
-  position: absolute;
-
-  transform: scale(1.5) scaleX(-1);
-
-  z-index: -1;
 `;
 
 export const EmployeeTitleContainer = styled.div`
@@ -76,7 +53,7 @@ export const EmployeeTitle = styled.h1`
   justify-content: center;
   margin: 0;
   color: ${({ theme }) => theme.palette.primary};
-  font-size: 40px;
+  font-size: 52px;
   font-weight: 600;
   width: 100%;
   height: 100%;
@@ -96,7 +73,6 @@ export const RightSquare = styled(SquareSvg)`
 `;
 
 export const EmployeeFooter = styled.div`
-  box-sizing: border-box;
   padding: 5% 0 10%;
   width: 100%;
   height: 100%;
@@ -130,5 +106,12 @@ export const NewEmployeeFormContainer = styled.div`
   justify-content: center;
   align-items: center;
   gap: 16px;
-  box-sizing: border-box;
+`;
+
+export const EmployeeCurveSvg = styled(CurveSvg)`
+  position: absolute;
+
+  transform: translateY(-35%) translateX(13%);
+
+  z-index: -1;
 `;

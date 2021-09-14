@@ -14,7 +14,6 @@ export const ButtonLink = styled(Link)<IButton>`
   box-shadow: none;
   font-size: 0.9em;
   font-weight: 700;
-  box-sizing: border-box;
 
   transition: all 100ms cubic-bezier(0.645, 0.045, 0.355, 1);
 

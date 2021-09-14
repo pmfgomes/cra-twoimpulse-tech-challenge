@@ -1,7 +1,6 @@
 import styled from "@emotion/styled";
 
 export const FormInputContainer = styled.div<FormPageInputProps>`
-  box-sizing: border-box;
   width: 100%;
   background-color: #fff;
   border: ${({ hasError }) => (hasError ? "1px solid #f44336" : "1px solid #f2f2f4")};
@@ -13,7 +12,6 @@ export const FormInputContentContainer = styled.div`
   align-items: center;
   padding: 16px 24px;
   width: 100%;
-  box-sizing: border-box;
 
   div {
     width: 100%;

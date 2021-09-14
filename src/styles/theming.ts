@@ -29,6 +29,12 @@ export const GlobalStyles = css`
       -moz-osx-font-smoothing: grayscale;
     }
 
+    *,
+    *::after,
+    *::before {
+      box-sizing: border-box;
+    }
+
     h1,
     h2,
     h3,

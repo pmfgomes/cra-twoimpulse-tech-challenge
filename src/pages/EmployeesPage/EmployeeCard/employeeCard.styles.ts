@@ -7,7 +7,7 @@ export const Card = styled.div<EmployeeCardProps>`
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  box-sizing: border-box;
+
   width: 650px;
   box-shadow: ${rgba("#000", 0.1)} 0px 0px 6px 0px;
   background-color: #fff;
@@ -18,7 +18,7 @@ export const Card = styled.div<EmployeeCardProps>`
 export const CardHeader = styled.header`
   display: flex;
   flex-direction: row;
-  box-sizing: border-box;
+
   padding: 24px;
   width: 100%;
 
@@ -78,7 +78,7 @@ export const CardContentContainer = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  box-sizing: border-box;
+
   padding: 16px 24px;
   gap: 8px;
   height: 180px;
@@ -89,7 +89,9 @@ export const CardContentContainer = styled.section`
     margin-right: 8px;
   }
 
-  input {
+  div,
+  input,
+  div input {
     width: 100%;
   }
 `;
